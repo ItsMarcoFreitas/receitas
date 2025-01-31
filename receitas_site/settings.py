@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7c%7))f0a@g0exj5nfx6(@%a&8@9w2q%c*oe&=^f4s7w+k*cjn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['receitas-z3nl.onrender.com']
 
 
 # Application definition
