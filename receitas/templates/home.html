@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="titulo-pagina">Últimas Receitas</h1>
+
+<div class="grid-receitas">
+  {% for receita in receitas %}
+  <div class="card-receita">
+    {% if receita.imagem %}
+    <img src="{{ receita.imagem.url }}" alt="{{ receita.titulo }}" />
+    {% endif %}
+    <div class="card-conteudo">
+      <h3>{{ receita.titulo }}</h3>
+      <p class="categoria">{{ receita.get_categoria_display }}</p>
+      <p class="descricao">{{ receita.descricao|truncatechars:100 }}</p>
+      <a href="{% url 'detalhe_receita' receita.id %}" class="botao"
+        >Ver Receita</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
