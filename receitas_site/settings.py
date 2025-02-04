@@ -77,9 +77,13 @@ WSGI_APPLICATION = 'receitas_site.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env.str("RDS_DB_NAME", "dpg-cuh3h2jv2p9s73cqjo8g-a"),
+        "USER": env.str("RDS_USERNAME", "sqlreceitas_user"),
+        "PASSWORD": env.str("RDS_PASSWORD", "HUoX7L7U3YF2QWYAnIE5L7ywBdGYcJqL"),
+        "HOST": env.str("RDS_HOSTNAME", "dpg-cuh3h2jv2p9s73cqjo8g-a.oregon-postgres.render.com"),
+        "PORT": env.str("RDS_PORT", "5432"),
     }
 }
 
