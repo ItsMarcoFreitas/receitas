@@ -6,3 +6,4 @@ tzdata==2025.1
 dj-database-url==2.1.0
 gunicorn
 psycopg2
+whitenoise
